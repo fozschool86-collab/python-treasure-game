@@ -25,7 +25,7 @@
 </style>
 </head><body><div class="wrap"><header class="top"><strong class="gold">🗝️ سرّ الشيفرة | الكنز المفقود</strong><div class="tag">⭐ النجوم: <b id="stars">0</b></div><button class="secondary" id="sound">🔊 الصوت</button></header><section class="scene" aria-label="مشهد المغامرة المتحرك"><div class="moon"></div><div class="mount m1"></div><div class="mount m2"></div><div class="cave"></div><div class="robot">🤖</div><div class="gem g1">💎</div><div class="gem g2">✨</div><div class="star" style="top:25%;right:17%">✦</div><div class="star" style="top:18%;left:35%">✧</div></section>
 <div id="pixelTalk" aria-live="polite">🤖 أنا بيكسل! أسرعي، البوابة السحرية بدأت تُغلق! هل أنتِ مستعدة لإنقاذ الكنز؟</div><section id="intro" class="panel center"><h1>مغامرة الكنز المفقود</h1><p class="muted">يا مستكشفة بايثون! 🤖 بيكسل يحتاج مساعدتكِ لعبور ثماني مراحل تُفتح تدريجيًا حسب الدروس التي تمت دراستها من الوحدة الثالثة «البرمجة مع بايثون». ابدئي بالمراحل الثلاث المتاحة، واجمعي البلورات وتنافسي مع زميلاتك!</p><p><b>المادة:</b> المهارات الرقمية | <b>الصف:</b> الثاني المتوسط</p><p><b>إعداد المعلمة:</b> فوز الوذناني</p><input class="name" id="student" placeholder="اكتبي اسم الطالبة" aria-label="اسم الطالبة"><input class="name" id="studentClass" placeholder="اكتبي الفصل (مثال: ثاني / 1)" aria-label="فصل الطالبة" style="margin:8px"><div class="actions" style="margin-top:16px"><button class="primary" id="start">🚀 ابدئي المغامرة</button><button class="secondary" id="introBoard">🏆 شاهدي لوحة الصدارة</button></div></section>
-<section id="map" class="hidden"><div class="center"><h2>🗺️ خريطة البلورات الثماني</h2><p class="muted">المراحل 1–3 مفتوحة، وتُفتح مرحلة جديدة كل أحد الساعة 7 صباحًا بتوقيت السعودية. تُحفظ نتيجتكِ بعد كل مرحلة!</p></div><div id="treasureTrack"></div><div class="grid" id="worlds"></div><div class="actions" style="margin-top:18px"><button class="secondary" id="reset">↻ بدء مغامرة جديدة</button><button class="secondary" id="export">📥 تنزيل النتائج CSV</button><button class="primary" id="leaderboardOpen">🏆 لوحة الصدارة</button></div></section>
+<section id="map" class="hidden"><div class="center"><h2>🗺️ خريطة البلورات الثماني</h2><p class="muted">المراحل الثلاث الأولى متاحة بالتتابع. وتُفتح مرحلة جديدة كل أحد بدءًا من 1 نوفمبر 2026، الساعة ٧ صباحًا بتوقيت السعودية. يظهر موعد فتح كل مرحلة على بطاقتها، وتُحفظ نتيجتكِ بعد إكمالها!</p></div><div id="treasureTrack"></div><div class="grid" id="worlds"></div><div class="actions" style="margin-top:18px"><button class="secondary" id="reset">↻ بدء مغامرة جديدة</button><button class="secondary" id="export">📥 تنزيل النتائج CSV</button><button class="primary" id="leaderboardOpen">🏆 لوحة الصدارة</button></div></section>
 <section id="leaderboard" class="panel hidden"><h2 class="center">🏆 أبطال سرّ الشيفرة</h2><p class="muted center">أفضل نتيجة لكل طالبة وفصل، مع المراحل المكتملة. تُحدّث القائمة عند فتحها.</p><p id="boardStatus" class="center muted" aria-live="polite">جاري التحميل...</p><div style="overflow-x:auto"><table class="leaderTable"><thead><tr><th>المركز</th><th>الطالبة</th><th>الفصل</th><th>النجوم</th><th>المراحل</th></tr></thead><tbody id="boardRows"></tbody></table></div><div class="actions" style="margin-top:18px"><button class="secondary" id="boardRefresh">🔄 تحديث النتائج</button><button class="primary" id="boardBack">🗺️ العودة للخريطة</button></div></section><section id="play" class="panel hidden"><div class="top"><button class="secondary" id="back">🗺️ الخريطة</button><span class="tag" id="step"></span></div><h2 id="title"></h2><p class="muted" id="skill"></p><div class="hud"><span id="energy">⚡ طاقة بيكسل: 3</span><span id="streak">🔥 سلسلة النجاح: 0</span><span id="rank">🏅 الرتبة: مستكشفة</span></div><div class="storybox"><b id="missionBanner">📜 المهمة السرية</b><p id="missionStory"></p></div><div class="progress"><div class="fill" id="fill"></div></div><div class="question" id="question"></div><div id="task"></div><div id="feedback" class="feedback hidden" role="status"></div><div id="badgeArea" class="hud"></div><div class="actions" style="margin-top:20px"><button class="secondary" id="hint">💡 تلميح بيكسل</button><button class="primary hidden" id="next">التحدي التالي ←</button></div></section>
 <section id="finish" class="panel center hidden"><h1>🏆 لقد فُتح الكنز!</h1><div style="font-size:90px" class="float">🧰💎✨</div><p class="muted" id="finalText"></p><div class="actions"><button class="primary" id="certificate">📜 شهادة الإنجاز</button><button class="secondary" id="finishMap">🗺️ الخريطة</button><button class="secondary" id="finishBoard">🏆 لوحة الصدارة</button><button class="secondary" id="finishExport">📥 النتائج</button></div></section>
 <section id="certPage" class="hidden"><div class="cert"><div style="font-size:60px">🏅</div><h2>شهادة إتمام مغامرة بايثون</h2><p>تُمنح هذه الشهادة للطالبة المتميزة</p><h1 id="certName"></h1><p>لإتمام مراحل «سر الشيفرة: مغامرة الكنز المفقود» بنجاح</p><p id="certStats"></p><p>المهارات الرقمية – الصف الثاني المتوسط</p><p>إعداد المعلمة: فوز الوذناني</p><p id="date"></p></div><div class="actions no-print" style="margin-top:20px"><button class="primary" onclick="window.print()">🖨️ طباعة الشهادة</button><button class="secondary" id="certBack">رجوع</button></div></section><footer class="foot">نشاط تعليمي تفاعلي • يتطلب اتصالًا بالإنترنت لإرسال النتائج • أسئلة تدريبية مستوحاة من مهارات الكتاب وليست نسخًا حرفيًا من تمارينه</footer></div>
@@ -73,13 +73,56 @@ if(state.done.length){talk('أهلًا بعودتكِ يا '+(state.name||'مس�
 // بطولة الفصل: ثلاث مراحل أولًا، ثم فتح أسبوعي تلقائي، وحفظ عند إكمال كل مرحلة.
 const RELEASE_DATES=['2026-11-01T07:00:00+03:00','2026-11-08T07:00:00+03:00','2026-11-15T07:00:00+03:00','2026-11-22T07:00:00+03:00','2026-11-29T07:00:00+03:00'];
 function availableStages(){return 3+RELEASE_DATES.filter(date=>Date.now()>=new Date(date).getTime()).length;}
+// مواعيد الفتح تُحسب حسب توقيت السعودية المحدد في RELEASE_DATES.
+function stageReleaseLabel(i){
+  if(i<3)return '';
+  const date=new Date(RELEASE_DATES[i-3]);
+  return 'الأحد '+new Intl.DateTimeFormat('ar-SA-u-ca-gregory',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Riyadh'}).format(date)+'، الساعة ٧ صباحًا بتوقيت السعودية';
+}
+function refreshStageCards(){
+  const allowed=availableStages();
+  document.querySelectorAll('#worlds .world').forEach((button,i)=>{
+    const done=state.done.includes(i);
+    const released=i<allowed;
+    const prerequisite=i===0||state.done.includes(i-1);
+    const status=button.querySelector('small:last-child');
+    if(!released){
+      button.disabled=true;
+      if(status)status.textContent='🔒 تُفتح '+stageReleaseLabel(i);
+      button.title='موعد فتح المرحلة: '+stageReleaseLabel(i);
+    }else if(done){
+      button.disabled=true;
+      if(status)status.textContent='✅ مكتملة';
+      button.title='هذه المرحلة مكتملة بالفعل';
+    }else if(!prerequisite){
+      button.disabled=true;
+      if(status)status.textContent='🔒 أكملي المرحلة السابقة أولًا';
+      button.title='أكملي المرحلة السابقة أولًا';
+    }else{
+      button.disabled=false;
+      if(status)status.textContent='🔓 جاهزة الآن';
+      button.title='ابدئي المرحلة';
+    }
+  });
+}
+
 const BOARD_ENDPOINT=RESULTS_ENDPOINT;
 const previousShow=show;
 show=function(id){previousShow(id);$('leaderboard').classList.toggle('hidden',id!=='leaderboard');};
 const previousMap=map;
-map=function(){previousMap();document.querySelectorAll('#worlds .world').forEach((button,i)=>{
-  if(i>=availableStages()){button.disabled=true;button.title='ستفتح هذه المرحلة بعد دراسة الدرس';}else if(state.done.includes(i)){button.disabled=true;button.title='هذه المرحلة مكتملة بالفعل';}
-});};
+map=function(){previousMap();refreshStageCards();};
+const previousOpenWorld=openWorld;
+openWorld=function(i){
+  if(i>=availableStages()){
+    alert('🔒 هذه المرحلة لم تُفتح بعد. موعد فتحها: '+stageReleaseLabel(i));
+    return;
+  }
+  if(i>0&&!state.done.includes(i-1)){
+    alert('🔒 أكملي المرحلة السابقة أولًا.');
+    return;
+  }
+  previousOpenWorld(i);
+};
 const previousFinish=finishWorld;
 finishWorld=function(){
   const before=state.done.length;
